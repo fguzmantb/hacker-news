@@ -8,12 +8,12 @@ COPY package.json .
 
 RUN npm install --quiet
 
-RUN npm install nodemon -g --quiet
+RUN npm install react-scripts@3.0.1 -g --quiet
 
 COPY . .
 
 ENV IS_DOCKER true
 
-EXPOSE 3005
+EXPOSE 3000
 
-CMD [ "nodemon", "src/app.js" ]
+CMD [ "npm", "start" ]

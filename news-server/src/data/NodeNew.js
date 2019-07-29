@@ -1,4 +1,4 @@
-const moongose = require('mongoose')
+const moongose = require('mongoose');
 
 const NewSchema = new moongose.Schema({
     title: {
@@ -14,16 +14,14 @@ const NewSchema = new moongose.Schema({
         required: true
     },
     url : {
-        type: String,
-        required: true
+        type: String
     },
     isDeleted : {
         type: Boolean,
         default: false
     }
-})
+});
 
-const NodeNew = moongose.model('NodeNew', NewSchema)
+const NodeNew = moongose.model('NodeNew', NewSchema);
 
-
-module.exports = NodeNew
+module.exports = NodeNew;
