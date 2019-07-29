@@ -1,23 +1,20 @@
 version: '3'
 services:
-  client:
-    container_name: news-client
+  news-client:
     restart: always
     build: ./news-client
     ports:
       - "80:3000"
     depends_on:
-      - server
-  server:
-    container_name: news-server
+      - news-server
+  news-server:
     restart: always
     build: ./news-server
     ports:
       - "3005:3005"
     depends_on:
-      - db
-  db:
-    container_name: mongo
+      - mongo
+  mongo:
     image: mongo
     ports: 
       - "27017:27017"
